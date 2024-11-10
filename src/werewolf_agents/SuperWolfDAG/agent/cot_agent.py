@@ -228,7 +228,8 @@ Based on your thoughts and the current situation, what is your {action_type}? Re
             ]
         )
         
-        logger.info(f"My initial {action_type}: {response.choices[0].message.content}")
+        # logger.info(f"My initial {action_type}: {response.choices[0].message.content}")
+        logger.info(f"My {action_type}: {response.choices[0].message.content}")
         initial_action = response.choices[0].message.content
         # do another run to reflect on the final action and do a sanity check, modify the response if need be
         if self.have_reflection:
@@ -260,6 +261,7 @@ Reflect on your final action given the situation and provide any criticisms. Ans
             reflection = f"Your reflection: {response.choices[0].message.content}"
         else:
             reflection = ""
+            return initial_action
 
         # do another run to reflect on the final action and do a sanity check, modify the response if need be
         prompt = f"""{role_prompt}
@@ -275,7 +277,7 @@ Your initial action:
 
 {reflection}
 
-Based on your thoughts, the current situation, and your reflection on the initial action, what is your absolute final {action_type}? Respond with only the {action_type} and no other sentences/thoughts. If it is a dialogue response, you can provide the full response that adds to the discussions so far. For all other cases a single sentence response is expected. If you are in the wolf-group channel, the sentence must contain the name of a person you wish to eliminate, and feel free to change your mind so that there is consensus. If you are in the game-room channel, the sentence must contain your response or vote, and it must be a vote to eliminate someone if the game moderator has recently messaged you asking for a vote, and also feel free to justify your vote, and later change your mind when the final vote count happens. You can justify any change of mind too. If the moderator for the reason behind the vote, you must provide the reason in the response. If the moderator asked for the vote, you must mention at least one name to eliminate. If the moderator asked for a final vote, you must answer in a single sentence the name of the person you are voting to eliminate even if you are not sure."""
+Based on your thoughts and the current situation, what is your absolute final {action_type}? Respond with only the {action_type} and no other sentences/thoughts. If it is a dialogue response, you can provide the full response that adds to the discussions so far. For all other cases a single sentence response is expected. If you are in the wolf-group channel, the sentence must contain the name of a person you wish to eliminate, and feel free to change your mind so that there is consensus. If you are in the game-room channel, the sentence must contain your response or vote, and it must be a vote to eliminate someone if the game moderator has recently messaged you asking for a vote, and also feel free to justify your vote, and later change your mind when the final vote count happens. You can justify any change of mind too. If the moderator for the reason behind the vote, you must provide the reason in the response. If the moderator asked for the vote, you must mention at least one name to eliminate. If the moderator asked for a final vote, you must answer in a single sentence the name of the person you are voting to eliminate even if you are not sure."""
         
         response = self.openai_client.chat.completions.create(
             model=self.model,
