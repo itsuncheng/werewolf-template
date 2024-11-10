@@ -1,0 +1,109 @@
+{
+  "activity_id": "1731191401_DWL",
+  "players": [
+    "Chagent",
+    "Klaus",
+    "Myra",
+    "Lars",
+    "Emily",
+    "vihaan",
+    "Elise",
+    "John"
+  ],
+  "game_status": "ended",
+  "player_roles": {
+    "John": "wolf",
+    "Elise": "wolf",
+    "Klaus": "seer",
+    "vihaan": "doctor",
+    "Myra": "villager",
+    "Lars": "villager",
+    "Chagent": "villager",
+    "Emily": "villager"
+  },
+  "total_rounds": 2,
+  "player_errors": {},
+  "success_game_stats": {
+    "winner": "WOLVES",
+    "vote_history": {
+      "wolf_votes": {
+        "0": {
+          "Elise": "Chagent",
+          "John": "Myra"
+        },
+        "1": {
+          "Elise": "Klaus",
+          "John": "Myra"
+        }
+      },
+      "doctors_save": {
+        "0": "Emily",
+        "1": "Emily"
+      },
+      "alive_players_votes": {
+        "0": {
+          "John": "Lars",
+          "Elise": "Lars",
+          "Klaus": "Lars",
+          "Myra": "Lars",
+          "Lars": "Klaus",
+          "vihaan": "Lars",
+          "Emily": "Lars"
+        },
+        "1": {
+          "Emily": "vihaan",
+          "vihaan": "John",
+          "Myra": "vihaan",
+          "John": "vihaan",
+          "Elise": "John"
+        }
+      }
+    },
+    "total_rounds": 2,
+    "round_wise_alive_players": {
+      "0": [
+        "Klaus",
+        "Myra",
+        "Emily",
+        "vihaan",
+        "Elise",
+        "John"
+      ],
+      "1": [
+        "Myra",
+        "Emily",
+        "Elise",
+        "John"
+      ]
+    },
+    "last_standing_players": [
+      "Myra",
+      "Emily",
+      "Elise",
+      "John"
+    ]
+  },
+  "failure_game_stats": null,
+  "running_game_stats": null,
+  "logs": {
+    "Klaus": "transcripts/Klaus_1731191401_DWL_log.txt",
+    "Myra": "transcripts/Myra_1731191401_DWL_log.txt",
+    "Lars": "transcripts/Lars_1731191401_DWL_log.txt",
+    "Emily": "transcripts/Emily_1731191401_DWL_log.txt",
+    "vihaan": "transcripts/vihaan_1731191401_DWL_log.txt",
+    "Elise": "transcripts/Elise_1731191401_DWL_log.txt",
+    "John": "transcripts/John_1731191401_DWL_log.txt",
+    "Chagent": "transcripts/Chagent_1731191401_DWL_log.txt"
+  },
+  "transcripts": {
+    "Klaus": "transcripts/Klaus_1731191401_DWL_transcript.jsonl",
+    "Myra": "transcripts/Myra_1731191401_DWL_transcript.jsonl",
+    "Lars": "transcripts/Lars_1731191401_DWL_transcript.jsonl",
+    "Emily": "transcripts/Emily_1731191401_DWL_transcript.jsonl",
+    "vihaan": "transcripts/vihaan_1731191401_DWL_transcript.jsonl",
+    "Elise": "transcripts/Elise_1731191401_DWL_transcript.jsonl",
+    "John": "transcripts/John_1731191401_DWL_transcript.jsonl",
+    "Chagent": "transcripts/Chagent_1731191401_DWL_transcript.jsonl"
+  },
+  "controller_log": "transcripts/1731191401_DWL_game_controller_log.txt"
+}
